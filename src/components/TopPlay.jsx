@@ -7,7 +7,9 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useGetTopChartsQuery } from "../redux/services/shazamCore";
+// import { useGetTopChartsQuery } from "../redux/services/shazamCore";
+// import { useGetJPopChartsQuery } from '../redux/services/shazamCore';
+import { useGetSongsByCountryQuery } from '../redux/services/shazamCore';
 
 const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
   <div className="w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
@@ -42,7 +44,7 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
 const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data } = useGetTopChartsQuery();
+  const { data } = useGetSongsByCountryQuery();
   const divRef = useRef(null);
 
   useEffect(() => {
