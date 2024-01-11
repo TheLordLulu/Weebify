@@ -8,7 +8,7 @@ const DetailsHeader = ({ artistId, artistData, songData, songid }) => {
   });
 
   const [showYouTubeVideo, setShowYouTubeVideo] = useState(false);
-  console.log('Videos:', videos);
+
   const handleOpenYouTubeVideo = () => {
     setShowYouTubeVideo(true);
   };
